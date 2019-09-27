@@ -44,7 +44,7 @@ body {
 
 .searchbar__container{
     display: flex;
-    border-bottom: 1px solid blueviolet;
+    border-bottom: 2px solid blueviolet;
     padding: .5rem 2rem;
     align-items: center;
     min-width: 30rem;

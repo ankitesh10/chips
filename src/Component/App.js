@@ -63,6 +63,7 @@ class App extends React.Component {
           />
         </div>
         <ItemList
+          term = {this.state.term}
           itemsDisplay={this.state.itemsDisplay}
           onItemClick={this.onItemClick}
           items={this.state.items}
