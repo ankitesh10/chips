@@ -1,0 +1,27 @@
+.item-list__container{
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 1rem 2rem;
+    display: none;
+    justify-self: end;
+}
+
+.item-list{
+    display: flex;
+    background-color: rgb(230, 230, 230);
+    padding: 1rem 2rem;
+    align-items: center;
+    cursor: pointer;
+    justify-content: space-between;
+    width: 30rem;
+
+    transition: background-color .2s;
+}
+
+.item-list:hover{
+    background-color: rgb(197, 197, 197);
+}
+
+.item-list__name{
+    font-size: 1.2rem;
+    color: #000;
+}
