@@ -1,28 +1,34 @@
 import React from "react";
 
-import './SearchBar.css';
+import "./SearchBar.css";
 
 class SearchBar extends React.Component {
-
   onFormSubmit = e => {
     e.preventDefault();
   };
 
-  onInputClick = value => {
-    this.props.onInputClick(value);
+  onBackEnter = e => {
+    this.props.onBackEnter(e)
   }
+
+  onInputClick = (value, e) => {
+    e.stopPropagation(); 
+    this.props.onInputClick(value);
+  };
 
   onTermChange = term => {
     this.props.onTermChange(term);
+
   };
 
   render() {
     return (
-      <form onSubmit={this.onFormSubmit}>
+      <form onSelect={e => e.stopPropagation()} onSubmit={this.onFormSubmit}>
         <input
           className="SearchBar__input"
+          onKeyUp={e => this.onBackEnter(e)}
           value={this.props.term}
-          onFocus = {() => this.onInputClick(1)}
+          onFocus={(e) => this.onInputClick(1, e)}
           onChange={e => this.onTermChange(e.target.value)}
           type="text"
           placeholder="Enter text here..."

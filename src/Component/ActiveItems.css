@@ -1,11 +1,18 @@
 .active-item{
     display: flex;
-    background: #e0dfda;
+    background: #e0e0e0;
     padding: 1rem 1.5rem;
     border-radius: 2rem;
     font-size: 1.2rem;
     font-weight: 600;
     margin-right: .5rem;
+    border: 1px solid transparent;
+    transition: all .2s ease-in;
+
+}
+
+.active-item--active{
+    border: 1px solid rgb(167, 167, 167);
 }
 
 

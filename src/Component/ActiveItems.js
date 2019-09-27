@@ -8,12 +8,27 @@ class ActiveItems extends React.Component {
   };
 
   renderItem = () => {
-    const itemsKeys = Object.keys(this.props.items);
+    let itemsKeys = Object.keys(this.props.items);
+
+    itemsKeys = itemsKeys.filter(index => {
+      return this.props.items[index] !== undefined ? index : null;
+    });
+
+    const index = itemsKeys.length - 1;
+
+    const id = itemsKeys[index];
+    console.log(id);
+    console.log(this.props.flag);
 
     return itemsKeys.map(key => {
       if (this.props.items[key]) {
         return (
-          <li className="active-item" key={key}>
+          <li
+            className={`active-item ${
+              key === id && this.props.flag === 2 ? "active-item--active" : ""
+            }`}
+            key={key}
+          >
             <div className="active-item__name">
               {this.props.items[key].name}
             </div>
